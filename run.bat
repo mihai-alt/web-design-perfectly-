@@ -57,14 +57,14 @@ set words[49]=aurorae
 :: Year
 set year=2020
 
-for /L %%i in (1,1,23) do (
+for /L %%i in (1,1,4) do (
 
     set /a r=!random! %% 50
     set /a v=!random! %% 10
     call set word=%%words[!r!]%%
     call set verb=%%verbs[!v!]%%
 
-    if %%i==23 (
+    if %%i==4 (
         set msg=final commit
     ) else (
         set msg=!verb! !word!
@@ -104,5 +104,5 @@ for /L %%i in (1,1,23) do (
 
     git commit -m "!msg!" --date "!commitdate!"
 
-    echo %%i / 23 - !msg! - !commitdate!
+    echo %%i / 4 - !msg! - !commitdate!
 )
